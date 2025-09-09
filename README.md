@@ -16,14 +16,36 @@ This project is an end-to-end data analysis pipeline that analyzes tourist arriv
 
 ## ⚙️ Process
 
+## ⚙️ Process
+
 1.  **Extract:** Raw tourism data was sourced as a CSV file from the Sri Lanka Tourism Development Authority.
 2.  **Transform:** The data was loaded into an SQLite database. SQL queries were written to:
-    * Clean the data by handling missing values and standardizing country names.
-    * Restructure the data from a wide format to a long format for easier analysis.
-    * Remove irrelevant summary rows.
-3.  **Load & Analyze:** Two key aggregation queries were written to summarize the data, calculating total arrivals by country and by month. These queries will be loaded into Power BI to power the dashboard visuals.
+      * Clean the data by handling missing values, standardizing country names, and removing hidden characters with `TRIM()`.
+      * Restructure the data from a wide format to a long format for easier analysis using a `UNION ALL` statement.
+      * Enrich the data by adding a `MonthNumber` column with a `CASE` statement to ensure correct chronological sorting.
+      * Remove irrelevant summary rows using a `DELETE` statement.
+3.  **Load & Analyze:** The cleaned data was connected to Power BI. Two key aggregation queries were written to summarize the data for dashboard visuals.
 
----
+-----
+
+## Challenges & Solutions
+
+A key challenge was ensuring the map visual worked correctly. The initial data contained hidden spaces and non-standard country names (e.g., "Russian Federation"), which caused geocoding errors in Power BI. I solved this by writing SQL `UPDATE` queries using the `TRIM()` function and `CASE` statements to clean and standardize the data at the source. This is a best practice that ensures data quality before it reaches the visualization layer.
+
+-----
+
+## Future Improvements
+
+  * Integrate data from multiple years to enable year-over-year trend analysis.
+  * Enrich the data by adding a `Region` column (e.g., Europe, Asia) to perform analysis on key markets.
+
+-----
+
+## Data Source
+
+The data for this project was sourced from the public monthly reports provided by the Sri Lanka Tourism Development Authority (SLTDA).
+
+-----
 
 ## 쿼리 SQL Queries
 
@@ -68,9 +90,10 @@ ORDER BY
 		WHEN 'December' 	THEN 12
 	END ASC;
 ```
+## 📊 Final Dashboard
 
----
+**
 
-## 📊 Dashboard
+Below is an animated GIF showcasing the dashboard's interactivity.
 
-*(A screenshot of the final Power BI dashboard will be added here later.)*
+**
