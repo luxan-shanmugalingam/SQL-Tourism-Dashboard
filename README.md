@@ -1,4 +1,4 @@
-# SQL-Powered Tourism Dashboard for Sri Lanka
+![Demo](https://github.com/user-attachments/assets/101807fa-50cf-4775-aaf9-3c0c84ad9de3)# SQL-Powered Tourism Dashboard for Sri Lanka
 
 ## 📖 Description
 
@@ -92,8 +92,10 @@ ORDER BY
 ```
 ## 📊 Final Dashboard
 
-**
+
+<img width="1478" height="808" alt="Dashboard" src="https://github.com/user-attachments/assets/38cdb840-3008-4019-a86c-3f9216b4c1fd" />
 
 Below is an animated GIF showcasing the dashboard's interactivity.
 
-**
+![Demo](https://github.com/user-attachments/assets/61de801c-8a0d-4b9f-9bba-01ba46b96ec2)
+
