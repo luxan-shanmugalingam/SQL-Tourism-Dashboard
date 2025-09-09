@@ -16,8 +16,6 @@ This project is an end-to-end data analysis pipeline that analyzes tourist arriv
 
 ## ⚙️ Process
 
-## ⚙️ Process
-
 1.  **Extract:** Raw tourism data was sourced as a CSV file from the Sri Lanka Tourism Development Authority.
 2.  **Transform:** The data was loaded into an SQLite database. SQL queries were written to:
       * Clean the data by handling missing values, standardizing country names, and removing hidden characters with `TRIM()`.
