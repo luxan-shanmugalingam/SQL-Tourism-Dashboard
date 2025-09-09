@@ -1,0 +1,9 @@
+# Ignore database files
+*.db
+*.sqlite3
+
+# Ignore Power BI project files
+*.pbix
+
+# Ignore system files
+.DS_Store
